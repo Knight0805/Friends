@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+ <title>
+  Login Test
+ </title>
+   <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+    <body>
+       <div class="container">
+         <form action="{% url 'validate' %}" method="POST" >
+          {% csrf_token %}
+         <div class="row">
+                <div class="col-25">
+                  <label for="fname">Name</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" name='name' placeholder='name' >
+                </div>
+              </div>
+           <div class="row">
+                 <div class="col-25">
+                  <label for="fname">UserName</label>
+                </div>
+                <div class="col-75">
+                   <input type="text" name='username' placeholder='username' >
+                </div>
+              </div>
+          <div class="row">
+                 <div class="col-25">
+                  <label for="fname">Phone Numeber</label>
+                </div>
+                <div class="col-75">
+                  <input type="phone" name='phone' placeholder='phoneNumber' >
+                </div>
+           </div>
+           <div class="row">
+                 <div class="col-25">
+
+                  <label for="fname">Set Password</label>
+                </div>
+                <div class="col-75">
+                  {% csrf_token %}
+                  <input type="password" name='pass' placeholder='password'>
+                </div>
+           </div>
+           <div class="row">
+                 <div class="col-25">
+
+                  <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+
+                  <input type="password" name='conform' placeholder='conform password' >
+                </div>
+           </div>
+             <div class="row">
+               <input type="submit" value='signup'>
+             <div class="row">
+         </form>
+       <div>
+    </body>
+</html>
